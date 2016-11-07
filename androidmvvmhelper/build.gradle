@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 25
@@ -23,6 +24,16 @@ android {
     dataBinding {
         enabled = true
     }
+}
+
+publish {
+    groupId = 'com.github.stfalcon'
+    artifactId = 'androidmvvmhelper'
+    publishVersion = '0.1'
+    desc = 'Library that helps build MVVM architecture with Android Data Binding'
+    licences = ['Apache-2.0']
+    uploadName='AndroidMvvmHelper'
+    website = 'https://github.com/stfalcon-studio/AndroidMvvmHelper.git'
 }
 
 dependencies {
