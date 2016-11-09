@@ -29,7 +29,7 @@ android {
 publish {
     groupId = 'com.github.stfalcon'
     artifactId = 'androidmvvmhelper'
-    publishVersion = '0.1'
+    publishVersion = '0.2'
     desc = 'Library that helps build MVVM architecture with Android Data Binding'
     licences = ['Apache-2.0']
     uploadName='AndroidMvvmHelper'
@@ -43,5 +43,4 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
-    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }
