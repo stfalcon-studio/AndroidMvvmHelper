@@ -39,8 +39,8 @@ public abstract class ActivityViewModel<A extends AppCompatActivity, B extends V
     /**
      * Activity lifecycle
      */
-    public void onBackKeyPress() {
-
+    public boolean onBackKeyPress() {
+        return false;
     }
 
     public void onStart() {
