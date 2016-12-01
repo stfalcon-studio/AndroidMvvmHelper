@@ -1,5 +1,6 @@
 package com.stfalcon.androidmvvmhelper.mvvm.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.databinding.BaseObservable;
@@ -101,6 +102,10 @@ public abstract class ActivityViewModel<A extends AppCompatActivity, B extends V
 
     public void onWindowFocusChanged(boolean hasFocus){
 
+    }
+
+    public Context attachBaseContext(Context newBase){
+        return newBase;
     }
 
 

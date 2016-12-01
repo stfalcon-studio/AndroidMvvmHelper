@@ -1,5 +1,6 @@
 package com.stfalcon.androidmvvmhelper.mvvm.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
@@ -142,6 +143,11 @@ public abstract class BindingActivity<B extends ViewDataBinding, VM extends Acti
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         viewModel.onWindowFocusChanged(hasFocus);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(viewModel.attachBaseContext(newBase));
     }
 
     public abstract VM onCreate();
