@@ -145,11 +145,6 @@ public abstract class BindingActivity<B extends ViewDataBinding, VM extends Acti
         viewModel.onWindowFocusChanged(hasFocus);
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(viewModel.attachBaseContext(newBase));
-    }
-
     public abstract VM onCreate();
 
     public VM getViewModel() {

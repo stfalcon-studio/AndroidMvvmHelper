@@ -104,11 +104,6 @@ public abstract class ActivityViewModel<A extends AppCompatActivity, B extends V
 
     }
 
-    public Context attachBaseContext(Context newBase){
-        return newBase;
-    }
-
-
     /**
      * -----------------------
      */
