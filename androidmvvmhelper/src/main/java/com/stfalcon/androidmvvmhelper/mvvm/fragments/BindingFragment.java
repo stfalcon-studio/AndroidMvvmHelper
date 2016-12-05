@@ -72,6 +72,12 @@ public abstract class BindingFragment<VM extends FragmentViewModel, B extends Vi
     }
 
     @Override
+    public void onStop() {
+        viewModel.onStop();
+        super.onStop();
+    }
+
+    @Override
     public void onPause() {
         viewModel.onPause();
         super.onPause();

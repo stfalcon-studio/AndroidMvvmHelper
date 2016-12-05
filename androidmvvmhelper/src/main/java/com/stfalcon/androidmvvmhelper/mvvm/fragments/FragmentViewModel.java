@@ -59,6 +59,10 @@ public abstract class FragmentViewModel<F extends BindingFragment, B extends Vie
 
     }
 
+    public void onStop(){
+
+    }
+
     public void onDestroy() {
         //realm.close();
     }
