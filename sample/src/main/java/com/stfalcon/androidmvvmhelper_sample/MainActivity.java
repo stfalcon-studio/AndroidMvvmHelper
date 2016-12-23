@@ -13,7 +13,7 @@ public class MainActivity extends BindingActivity<ActivityMainBinding, MainActiv
 
     @Override
     public MainActivityVM onCreate() {
-        return new MainActivityVM(this, getBinding());
+        return new MainActivityVM(this);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class MainActivity extends BindingActivity<ActivityMainBinding, MainActiv
     }
 
     @Override
-    public int getLayoutResources() {
+    public int getLayoutId() {
         return R.layout.activity_main;
     }
 

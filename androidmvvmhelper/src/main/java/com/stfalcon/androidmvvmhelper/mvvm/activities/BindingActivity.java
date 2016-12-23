@@ -1,11 +1,9 @@
 package com.stfalcon.androidmvvmhelper.mvvm.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
@@ -31,7 +29,7 @@ public abstract class BindingActivity<B extends ViewDataBinding, VM extends Acti
     }
 
     public void bind() {
-        binding = DataBindingUtil.setContentView(this, getLayoutResources());
+        binding = DataBindingUtil.setContentView(this, getLayoutId());
         this.viewModel = viewModel == null ? onCreate() : viewModel;
         binding.setVariable(getVariable(), viewModel);
         binding.executePendingBindings();
@@ -167,5 +165,5 @@ public abstract class BindingActivity<B extends ViewDataBinding, VM extends Acti
      */
     public abstract
     @LayoutRes
-    int getLayoutResources();
+    int getLayoutId();
 }

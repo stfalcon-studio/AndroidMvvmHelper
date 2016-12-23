@@ -1,12 +1,9 @@
 package com.stfalcon.androidmvvmhelper.mvvm.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.databinding.BaseObservable;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,23 +11,17 @@ import android.view.MenuItem;
 /**
  * Created by alex on 19.01.16.
  */
-public abstract class ActivityViewModel<A extends AppCompatActivity, B extends ViewDataBinding>
+public abstract class ActivityViewModel<A extends AppCompatActivity>
         extends BaseObservable {
 
     protected A activity;
-    protected B binding;
 
-    public ActivityViewModel(A activity, B binding) {
+    public ActivityViewModel(A activity) {
         this.activity = activity;
-        this.binding = binding;
     }
 
     public A getActivity() {
         return activity;
-    }
-
-    public B getBinding() {
-        return binding;
     }
 
     public void finish() {

@@ -9,7 +9,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "0.3.4"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -29,7 +29,7 @@ android {
 publish {
     groupId = 'com.github.stfalcon'
     artifactId = 'androidmvvmhelper'
-    publishVersion = '0.3.2'
+    publishVersion = '0.3.4'
     desc = 'Library that helps build MVVM architecture with Android Data Binding'
     licences = ['Apache-2.0']
     uploadName='AndroidMvvmHelper'

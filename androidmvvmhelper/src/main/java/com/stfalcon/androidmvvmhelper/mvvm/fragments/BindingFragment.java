@@ -27,8 +27,7 @@ public abstract class BindingFragment<VM extends FragmentViewModel, B extends Vi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, getLayoutResources(), container, false);
-        setAllowEnterTransitionOverlap(true);
+        binding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);
         return binding.getRoot();
     }
 
@@ -36,20 +35,14 @@ public abstract class BindingFragment<VM extends FragmentViewModel, B extends Vi
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         this.savedInstanceState = savedInstanceState;
-        binding.setVariable(getVariable(), getUpdatedViewModel());
+        viewModel = onCreateViewModel(binding);
+        binding.setVariable(getVariable(), viewModel);
         binding.executePendingBindings();
         viewModel.onViewCreated();
     }
 
     public B getBinding() {
         return binding;
-    }
-
-    @SuppressWarnings("unchecked")
-    private VM getUpdatedViewModel() {
-        if (viewModel == null) viewModel = onCreateViewModel(binding);
-        else viewModel.updateBinding(binding);
-        return viewModel;
     }
 
     public VM getViewModel() {
@@ -146,5 +139,5 @@ public abstract class BindingFragment<VM extends FragmentViewModel, B extends Vi
      *
      * @return layout resource id
      */
-    public abstract int getLayoutResources();
+    public abstract int getLayoutId();
 }
